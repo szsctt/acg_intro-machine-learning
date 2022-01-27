@@ -102,6 +102,33 @@ Heuristic - educated guess
 
 Sometimes, we use heuristics because we just want a (cheap) answer that is 'good enough', rather than an (expensive) answer that is perfect
 
+### Understand why computers compute 
+
+#### Binary number systems
+
+Binary numbering system: places represent powers of two.
+
+Each position: bit
+Eight bits: Byte
+
+Each byte: 256 possible combinations
+
+#### Logic gates
+
+The basic building blocks of most modern computers
+
+A debate between George Boole vs Sir William Hamilton prompted Boole to develop a system of logic that uses two states (TRUE, FALSE).
+
+Digitial logic gates are an application of boolean logic
+
+An AND gate: two inputs, one output; true if both inputs are true
+An OR gate: two inputs, one output; true if one input is true
+A NOT gate: one input, one output; true if input is not true
+
+Two gates in series: AND and NOT - NAND: only false if both inputs are true
+
+NAND gate is 'universal' - can build any other gate type with combinations of NAND gates
+
+#### Challenge lesson: logic gates
 
 
-### Understand why computers compute
