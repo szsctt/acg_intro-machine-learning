@@ -131,4 +131,6 @@ NAND gate is 'universal' - can build any other gate type with combinations of NA
 
 #### Challenge lesson: logic gates
 
+Challenge - design a circuit that adds two numbers using only one circuit element
 
+![My solution](images/section1_lab.png)
