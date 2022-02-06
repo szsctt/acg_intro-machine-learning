@@ -280,5 +280,44 @@ But how to split time series data?  Time plays an important part in the context 
 
 ### Why it works
 
+Example from history: building a ship that didn't work.  Two different rules found on ship, with two different measurement units. Same thing happend with mars climate orbiter.
 
+Objective: group pepper plants into similar clusters based on data about their growing conditions, pepper yield, and 'spiciness' (Scoville Units). 
+
+
+![](images/section2_data-cleaning-example.png)
+
+First convert to same units.  Then do min/max scaling - get temperature range (max-min), then subtract minimum from all values, then divide by range.
+
+![Min/max scaling](images/section2_min-max-scaling.png)
+
+Min/max scaling is useful when there's a defined range of values that are of interest, but doesn't work that well when there isn't a defined upper limit.
+
+Need to make sure that there isn't a column with a set of values very different to the other values.
+
+We might perform standardisation (or Z-score normalisation) on the 'spiciness' column.  We compare the values to a standard curve
+
+![](images/section2_standardiazation.png)
+
+![](images/section2_standardization2.png)
+
+Mean normalization: similar to min/max normalisation but use average instead of mean to scale
+
+![](images/section2_mean-normalisation.png)
+
+### Lab: Data exploration
+
+Background: you're a data analyst for a new internet service that wants to use high altitude balloons to provide wereless internet service for remote and rural areas around the globe.  Bermuda has been chosen as a test market; the task is to decide if this is a good idea.
+
+Criteria for a good test market:
+
+ - Low service penetration: existing internet service penetration for population should be under 50%, indicating a sufficient available market for new subscribers
+ - Upward trend in mobile: mobile usage should be consistently growing over the past 10 years, indicating growing popularity of a connected lifestyle
+ - Declining landline service: landline subscribers tend to get their internet access via their existing landline provider at a much cheaper price point than the target price of the new service
  
+Objective:
+
+ - Determine through quantative reasearch if Bermuda meets all of our criteria 
+ 
+
+
