@@ -1,6 +1,6 @@
 # Introduction to machine learning
 
-## History of machine learning
+## Section 2: History of machine learning
 
 
 ### Brief history of AI and ML 
@@ -131,6 +131,154 @@ NAND gate is 'universal' - can build any other gate type with combinations of NA
 
 #### Challenge lesson: logic gates
 
+![Objectives](section1_lab_objectives.png)
+
 Challenge - design a circuit that adds two numbers using only one circuit element
 
 ![My solution](images/section1_lab.png)
+
+The hints were:
+
+![](images/section1_lab_hints.png)
+
+Use [logic.ly](https://logic.ly) to explore circuits.
+
+
+The solution, using different kinds of logic gates
+![Half-adder](images/section1_lab_solution1.png)
+
+The solution, using only one kind of logic gate (NAND)
+![](images/section1_lab_solution2.png)
+
+This is different to mine... But there are different solutions
+
+## Data
+
+Learning objectives:
+
+1. Understand the different types of data
+2. Understand the difference between structured, unstrctured and semi-structured data
+3. Common ways we provide context to data
+
+Key words:
+
+ - schema
+ - tensor
+ - aggregation
+ - normalization
+ - feature engeineering
+ 
+### Intro to data
+
+The human computer: 100 billion neurons in a human brain.  Neurons have many more connections than transistors.  Intelligencs is more than logic.  Data drives intelligence.
+
+![]("images/section2_data-hierachy.png")
+
+Top layers are intelligence: 
+
+ - Wisdom is knowledge over lots of time
+ - Knowlege is making sense of information
+ - Information is a collection of summarised things
+ - Generalizations, probabilities, conclusions are tricks to summarise and understand
+
+Structured data: 
+ - adheres to some rules or formats that we can count on
+ - easy for computers to access
+ - examples: name, time, weekday
+ 
+Unstructured data: 
+ - data that isn't a format that we can count on 
+ - hard for computers to access
+ - example: picture, block of text, form, restraunt review
+ 
+Semi-structured
+ - in between structured and unstructured
+ - brings along it's own strcture
+ - e.g. JSON, YAML files
+ 
+The goal of machine learning is often to structrure data more
+
+## Data context
+
+Context provides the "backstory" for data:
+
+ - Where did it come from?
+ - Who created it?
+ - How was it collected or generated?
+ - Is it trustworthy?
+ 
+A schema: 
+
+ - predefined blueprint of how data is structured and related
+ - provide context for storing, reading and interpreting data
+ - an entity relationship diagram is one way of representing a schema
+
+![Entity relationship diagram](images/section2_schema.png)
+
+A cannonical model:
+
+ - a common format for exchanging data among systems
+ 
+Data types:
+
+ - integers
+ - floating point
+ - decimal (fixed number of decimal places)
+ - bigint, smallint: integers when we had to care about memory usage
+ - character
+ - string
+ - blob: binary large objct; video; audio; file
+ 
+Composite datatypes:
+
+ - tuple: a number of items (integers, characters, etc) in a list
+ - array: a collection of items where each item can be identitfied by an index or key (e.g. dict) (sometimes called a vector)
+ - matrix: an array in two dimensions
+ - tensor: a collection of matrices / a generic multidimensional array
+  - 1-D tensor / first order tensor: array
+  - 2-D tensor / second order tensor: matrix
+  - tensor: collection of matrices
+  
+Tensors are used for image regcnonition.  Images are broken up into RGB components - one matrix for red, one for green, one for blue
+
+### Data preparation
+
+Most of the work in developing machine learning models is in data preparation: cleaning, scrubbing, sanitising
+
+Common problems:
+
+ - formatting: e.g. data in columns not all the same type
+ - missing values
+ - duplicates
+ - invalid data
+ - encoding
+ 
+ 
+STeps in data prepration:
+
+ - Cleaning: sorting out these issues
+ - Aggregation: summarising the data through consolidation
+ - Transforming: converting to another format, unit or value
+ - Normalisation: scale values relative to a constant value
+ - Visualisation: gives us insights that we can't see just by looking at the data
+ 
+Feature engineering: getting the data into the best possible shape for machine learning
+
+### Data sets
+
+We're after generalizations, not memorizations, if we want to learn from the data.  To do this, we often hold back some data when training the model to assess the generalisability of the model:
+
+ - training dataset: for training model
+ - validation dataset: 'check point' to see how training is going
+ - testing dataset /  hold-out dataset: hold-back for testing final model
+
+A reasonable split is 70-80% of the data for training the model, 20-30% of the data for testing.  An alternative is 70% training, 15% validation, 15% testing.  
+
+The split should keep representative data in each set.  So it's important to randomise data before splitting.
+
+But how to split time series data?  Time plays an important part in the context of the data, so we can't just take random days, or one period of time.  So we probably want the most recent data as the hold-out data.  But it can be very difficult to predict patterns that weren't in the training data
+
+### Why it works
+
+
+ 
