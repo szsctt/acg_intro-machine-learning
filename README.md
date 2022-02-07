@@ -319,5 +319,122 @@ Objective:
 
  - Determine through quantative reasearch if Bermuda meets all of our criteria 
  
+Solution:
 
+Google has a feature to search for [public datasets](https://www.google.com.au/publicdata/directory).
+
+Go to world bank website to get the data.  Check landline usage, internet penetration, 
+ 
+
+
+## Supervised and unsupervised learning
+
+Learning objectives:
+
+1. Broadly understand supervised learning nad some common supervised learning methods
+2. Broadly understand unsupervised learning nad some common unsupervised learning methods
+3. Evaluate whether supervised or unsupervised leraning approaches are appropriate for given use-cases
+
+Key words:
+
+ - Stochastic gradient descent
+ - k (as in k-means, k-nearest neighbours)
+ - convergence
+ 
+### Kinds of machine learning
+
+Broadly, supervised learning, unsupervised learning, and reinforcement learning.
+
+Supervised: a teacher supervised the learning process by providing examples and feedback
+
+ 1. Gather examples
+ 2. Choose an algorithm
+ 3. Train model
+ 4. Check how we're doing (testing)
+ 5. Make new predictions
+ 
+Unsupervised: don't have examples of what to expect
+
+ 1. Choose our algorithm
+ 2. Feed in the data
+ 3. Train model
+ 4. Make some groupings
+ 
+Reinforcement learning: model that seeks to maximise reward, usually through trial and error
+
+1. Try random stuff
+2. Collect data from attepts
+3. Train model
+4. What action gives best reards
+5. Make improvements
+6. Back to step 1
+
+How to choose a model type?
+
+ - What problem are you trying to solve?
+ - What data do you have to work with?
+ - What data type do you have?
+ - How must you produce results?
+ 
+## Supervised learning
+
+ 1. Gather examples
+ 2. Choose an algorithm
+ 3. Train model
+ 4. Check how we're doing (testing)
+ 5. Make new predictions
+
+In other words:
+
+1. Gather round truth (data): a collection of data examples that you know to be accurate and representative of the types of scenarios you want to generalize
+2. Reverse engineer a mathematical description of patterns
+3. Test our pattern formula
+4. Use our formula on similar data
+
+### Regression
+
+Regression: helps uncover relationships between data points and ultimately build models to predict new data points.
+
+Linear regression: adjust to minimize error.  One way of fitting is stochastic gradient descent.
+
+Stochastic gradient descent: a way to find degree of error in order to adjust and improve our ML model
+
+Convergent: Finding a minima in error function.  Could be global or local
+
+### Classification
+
+Data have particular classes, or 'labels'
+
+k-nearest neighbours: way of classifying data into groups. Use k attributes to group data.
+
+## Unsupervised learning
+
+Hebbian theory: you can figure stuff out on your own by associations
+
+
+ 1. Choose our algorithm
+ 2. Feed in the data
+ 3. Train model
+ 4. Make some groupings
+ 
+ When to use:
+ 
+  - Unlabelled data
+  - Training is not feasible (e.g. pattern recognition)
+  - Performance
+  
+Examples of unsupervised learning:
+
+ - Clustering
+ - Data compression
+ - Associations : uncover relationships between things that weren't obvious
+ - Anomaly detection
+ 
+### Clustering
+
+Group things such that they are with things that are more similar than different
+
+No training data - different to supervised
+
+k-means analysis: group data into k clusters
 
