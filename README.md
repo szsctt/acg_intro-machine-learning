@@ -438,3 +438,58 @@ No training data - different to supervised
 
 k-means analysis: group data into k clusters
 
+## Reinforcement and ensemble learning
+
+### When enough is enough
+
+When to stop training? Consider:
+
+ - Mathematical enormity of our problem space
+ - Time and resources
+ - **Risk of overfitting**
+ - Pursuit of perfection
+ 
+What is overfitting?  "Memorising" the data, resulting in a model that doesn't generalize well.
+ 
+![Overfitting](images/section3_overfitting.png)
+
+We can also have underfitting, where the model doesn't describe the data well.
+
+![Underfitting](images/section3_underfitting.png)
+
+How to avoid overfitting:
+
+ 1. More data
+ 2. Stop training
+ 3. Ensembles - combining different traning approaches
+ 4. Sprinkle in some noise
+ 
+Entropy: A measure of the amount of randomness
+
+### What is learning
+
+Pavlov's dog - reinforcement learning, 'involuntary'
+
+Thorndike's cats in puzzle boxes.  Law of effect: responses that produce a desired effect are more likely to occur again
+
+Skinner's: law of effect --> operant conditioning, considered 'voluntary'
+
+Desirable effects: reinforcement
+Unpleasant effects: punishment
+ 
+### Reinforcement learning
+
+Ron Howard: Dynamic programming and Markov processes
+
+DeepRacer: model car 
+
+Concepts in markov decision process:
+
+ - Agent: Car
+ - Environment: Road
+ - State: Where the car is in the environment
+ - Observation: Cameras, etc to observe environment
+ - Action: Given state and observation, do something
+ - Reward: The outcome of the action
+ - Policy: How to decide which actions to take
+ 
