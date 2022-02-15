@@ -493,3 +493,71 @@ Concepts in markov decision process:
  - Reward: The outcome of the action
  - Policy: How to decide which actions to take
  
+### Ensemble learning
+
+Using multiple machine learning processes together to get a better result.
+
+Decision tree example - factors that influence house price
+
+Random Forest - divide up attributes into trees
+
+### Challenge lab - self-driving car
+
+Mission - train a car to drive by itself
+
+Expert path: AWS deep racer
+Intermediate path: MetaCar project
+
+## Deep learning
+
+History and cycles in ideas in the field
+
+Early neural network - MADELINE - noise on phone lines
+
+Hinton and colleagues - uses of neural networks, "deep learning"
+
+### What is deep learning?
+
+Neurons - form networks
+
+Deep learning tries to mimic these networks
+
+Input node, hidden layer, output node
+
+Early example - perceptron machine which did binary classification
+
+![](images/section6_perceptron.png)
+
+This is kind of simple - and only does one thing that we can do more easily other ways.  But Adding lots of hidden layers make neural networks much more flexible.
+
+
+### How do neural networks work
+
+Think of each decision point in the hidden layer as an 'activation function' - kind of like a logic gate, but probably more sigmoid.
+
+Training phase - feed in labelled data, adjustments made to hidden layers by adjusting the weights and biases of the activation functions.
+
+![Bias and weight](images/section6_actiation_fucntion_bias_weight.png)
+
+![Training](images/section6_training.png)
+
+Backpropagation: iteratively moving back through a neural network and adjusting the weights to minimise the error at the output layer.
+
+### Convolutional neural networks
+
+How do computers see?  Look at how we see. Image falls on retina -> occiptial lobe -> visual cortex.
+
+Picture represented as RGB (and maybe alpha). Feed image into input node, and it propagates through network.
+
+Hidden layer contains 'filters', which recognise features like edges, corners, etc.  The matrix multiplication that combines the image with the filters is called convolution, so these networks are often called convolutional neural networks.
+
+### Comprehending meaning
+
+Need to understand information and context to comprehend meaning.
+
+Recurrent neural networks are useful for understanding context.  In these networks, there are lots of recurrent connections in the hidden layers.  This helps it consider many parts of the same set of information together.
+
+Recurrent neural networks are often used for speech and language comprehension.
+
+Generative adversarial networks.  Generator tries to trick discriminator into thinking its output is a real picture of a face.  Asimov institute has a list of common network types.
+
