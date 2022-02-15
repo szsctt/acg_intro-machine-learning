@@ -1,3 +1,5 @@
 .DS_Store
 .Rproj.user
 labs/deep-learning/shapes/*svg
+labs/deep-learning/.ipynb_checkpoints/
+labs/deep-learning/shapes/convert_shapes.sh
