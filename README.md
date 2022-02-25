@@ -1,5 +1,8 @@
 # Introduction to machine learning
 
+Below are my notes from the A Cloud Guru course 'Introduction to Machine Learning'
+
+
 ## Section 2: History of machine learning
 
 
@@ -560,4 +563,67 @@ Recurrent neural networks are useful for understanding context.  In these networ
 Recurrent neural networks are often used for speech and language comprehension.
 
 Generative adversarial networks.  Generator tries to trick discriminator into thinking its output is a real picture of a face.  Asimov institute has a list of common network types.
+
+
+### Challenge lesson: DIY neural net
+
+Objective: build and train a neural network capable of detecting a shape:
+
+ - Choose any shape
+ - Use any methods or tools
+ 
+I used Tensorflow to do this - the notebook is in `labs/deep-learning`.
+
+Intermediate path hints:
+
+ - Try to excel or just hide under the sheets
+ - It's getting convoluted in here
+ - Use the wisdom of those who went before you
+ 
+Beginner path:
+
+ - Instructor did this in excel
+ - Make a line, and convolve it with a number of filters
+ - Convolve: max(0, SUMPRODUCT(filter, square on image))
+ - Use different filters to detect different kinds of lines - look for max value for all filters
+ 
+## Tools for machine learning
+
+There are lots of available frameworks and tools for doing machine learning
+
+### Machine learning frameworks
+
+No need to build models ourselves - use a framework. Examples are:
+
+- Tensorflow
+- Pytorch
+- Scikit-learn
+- Keras
+- Fast.ai
+
+### Languages for machine learning
+
+Use python.  Lol.
+
+Use Jupyter notebooks
+
+### Compute
+
+The cloud allows immediate access to the latest hardware on a pay-per-use basis.  This includes GPUs, which are optimised for doing complicated maths (like machine learning).  There are also Application Specific Integrated Circiuts (ASIC) and Field Programmable Gate Arrays (FPGA), which are often better than GPUs, but are less flexible  and more expensive.
+
+Some cloud providers are expanding into ASIC and FPGA.
+
+### Challenge lab
+
+ Expert path: do the [Angry Ferret Detector lab](https://learn.acloud.guru/series/acg-projects/view/208)
+ 
+### Angry ferret detector - use and publish AWS marketplace machine learning resources
+
+#### Aims
+
+ - Infer the disposition of a ferret before attacks occur
+ - Scalable and low-maintenance solution
+ - Solution should be easy for the masses to use
+
+
 
