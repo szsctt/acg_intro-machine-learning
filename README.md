@@ -626,4 +626,92 @@ Some cloud providers are expanding into ASIC and FPGA.
  - Solution should be easy for the masses to use
 
 
+#### Using a marketplace algorithm
 
+An overview of how sagemaker works:
+
+![](images/section6_lab.png)
+
+
+This section explains how to use a marketplace algorithm and train it on your own data
+
+Steps:
+
+ - Use AWS console
+ - Create S3 bucket (use all defaults)
+ - Go to sagemaker and start notebook:
+	- Create new role and specify access to the S3 bucket just created
+	- Can add github repo as well 
+ - Go to AWS marketplace and search for 'logistic', filtering for SageMaker
+    - The tutorial selects a logistic regression model from Intel but it doesn't seem to be available anymore , so can't follow along...
+    - Open jupyter and create notebook
+    - Upload data and get code from [github](https://github.com/ACloudGuru-Resources/ACG_Project_Angry_Ferret_Detector)
+    - Import libraries and set sagemaker session
+    - Import data with pandas, data cleaning
+    - Save data and upload to S3 bucket
+    - Set up algorithm: define some hyperparameters, add ARN from subscribed algorithm, define algorithm's estimator method (consult documentation)
+    - Issue fit method - launches training job
+    - Job will be listed in console in "training jobs" - look for details there
+    
+#### Using a marketplace model
+    
+Three steps when SageMaker creates models:
+
+ - Create a model: inference engine that makes predictions
+ - Create an endpoint configuration: defines model to use, infrence instance type, instance count, variant name and weight
+ - Create an endpoint: Publishes the model via the endpoint configuration to be called by the SageMaker API
+    
+![Overview of how SageMaker deploys models](images/section6_lab2.png)
+
+How models are created:
+
+![SageMaker model creation](images/section6_lab3.png)
+
+But we can also just use a model from the AWS marketplace.
+
+How endpoints are configured:
+
+
+![SageMaker endpoint configuration](images/section6_lab.png)
+
+Weights - ways to have multiple versions of the model, directs traffic to different versions
+
+Walkthrough:
+
+ - Go to 'model packages' and click 'AWS marketplace' tab, then 'Find model packages'
+ - Find one called 'GluonCV MobileNet Classifier'
+ - Subscribe and verify that model package appears in console
+ - Go to Jupyter and run notebook
+ - Import modules and use model ARN to create Model Package
+ - Deploy endpoint (will take some time)
+ - Once finished, verify existence of endpoint configuration and endpoint in console
+ - Read in a test image and convert to byte array
+ - Use boto3 SDK to define a client ('sagemaker-runtime')
+ - Use the `invoke_endpoint` method to run model
+ - Get JSON response back
+ - Model tells us that there's a ferret but also that there's a frying pan/crock pot
+ - Delete endpoint - incurrs cost!  Also delete endpoint configuration and model, and cancel subscription to model
+ 
+#### Publishing your own model
+
+As of 2019, can only use US-East-2, and use docker container uploaded to ECR registry
+
+Model needs to support Batch Inference - required for validation step.
+
+Model must be self-container - dosen't need runtime libraries or to download anything (part of validation step is running in environment with no internet access).
+
+Walkthrough
+
+ - Put test data on S3
+ - Open traning job where model was training 
+ - Create model package - need paths to ECR container and model artifacts on S3
+ - Specify allowable infrerence instance types
+ - Specify input and output types
+ - Make sure to validate for marketplace
+ - In validation profile, make sure to specify the location of testing files in S3
+ - Once validated, go to AWS marketplace, sell in marketplace, ML products
+ - Need to be set up as a seller - more involved if you want to sell for money
+ - Fill out submission wizard - use ARN for model package
+ 
+
+ 
