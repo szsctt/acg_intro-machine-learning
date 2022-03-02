@@ -723,4 +723,73 @@ Jupyter notebook basics:
  - Imports
  - Plots
  
+## Components of a machine learning project
+
+### Problem framing
+
+Thinking through how best to achieve your desired outcomes (before doing anything).
+
+
+#### Focus the problem statement
+
+
+Start with desired type of generalisation
+
+![Generalisation types](images/section8_generalizations.png)
+
+At least try to frame problem as supervised, unsupervised or reinforcement learning problem.
+
+Think about how the results will be used: online (real-time) or offline (batch)
+
+
+Evaluate what data we have to work with:
+
+ - is it available (or do we have means to get it)
+ - is it accessible (machine-readable)?
+ - is it clean?
+ - it is accurate?
+ - is it representative?
+ - is it ethical?
+
  
+How will we decide if the model is doing what we want?  Think about accuracy/precision.  Will we do online or offline validation?  How will we evaluate consistency and explainability?
+
+### Training a model
+
+Cycle of development - think about how to divide tasks
+
+![Tasks for a ML project](images/section8_tasks.png)
+
+#### Evaluation steps
+
+Evaluation is an important part of training
+
+ - Define evaluation (during problem framing)
+ - Evaluate: review metrics
+ - Tune: adjust training process, data, evaluation strategy or algorithm if necessary
+ 
+### Deployment
+
+Types:
+
+ - "Big Bang"
+  - Instantly go live on a new version
+  - quick but higher risk
+  - Could be better for tightly coupled architectures
+ - Phased rollout
+  - 'Canary Deployment': Use a 'sentinel' to detect issues, e.g. slowly increase traffic and check for issues
+  - A/B testing: similar to Canary testing, but main purpose is to detect data
+  - Shadow deployment: Deploy in parallel alongside an exisiting model, record results for analysis
+  - slower but lower risk
+ - Parallel adoption
+  - Run both old and new system at same time
+  - Can involve extra work, such as using both systems at once
+ - Slowest but lower risk (but might have concurrency issues)
+ 
+### Post-deployment
+
+Once in production, have access to new data that can be used to improve the model.
+
+ - Concept drift: data coming in changes over time, introducing additional factors that were not represented in the original training process.
+ - Unreasonable expectations: some stakeholders may have unreleastic expectations of what is possible
+ - Prepare for bad actors trying to influence the model (adveserial robustness toolbox from IBM)
