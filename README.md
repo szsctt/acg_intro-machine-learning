@@ -713,5 +713,14 @@ Walkthrough
  - Need to be set up as a seller - more involved if you want to sell for money
  - Fill out submission wizard - use ARN for model package
  
+### Intermediate path: UFO analysis
 
+Jupyter notebook basics:
+
+ - Cells
+ - Uploads
+ - Running cells
+ - Imports
+ - Plots
+ 
  
